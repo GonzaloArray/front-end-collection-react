@@ -1,0 +1,14 @@
+.text-primary{
+    color: aqua;
+}
+.text-white{
+    color: white;
+}
+.text-white:hover{
+    color: aqua;
+}
+.feh-flex{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}

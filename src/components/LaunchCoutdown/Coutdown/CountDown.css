@@ -1,0 +1,106 @@
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__bottom{
+    background-color: hsl(236, 21%, 26%)!important;
+
+    
+    color: hsl(345, 95%, 68%)!important;
+
+}
+.card__top{
+    background-color: transparent!important;
+    color: hsl(345, 95%, 68%)!important;
+}
+
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__top{
+    border: none;
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card{
+    background-color: hsl(236, 21%, 26%)!important;
+    border-radius: .6rem;
+    padding: 2rem 2.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    box-shadow: #121322 0px 23px 10px -14px;
+}
+@media (min-width: 768px) {
+    .flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec{
+        font-size: 6rem;
+        line-height: 1;
+    }   
+    .flip-countdown .flip-countdown-piece .flip-countdown-card{
+
+        margin-bottom: 2rem;
+        margin-top: 0rem;
+    }
+}
+
+.flip-countdown-title{
+    font-weight: bold;
+    font-size: 1rem!important;
+    color: #625A7C;
+    letter-spacing: .2rem!important;
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card::before{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: hsl(235, 20%, 22%);
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0000003e;
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec{
+    box-shadow: none!important;
+}
+.flip-countdown .flip-countdown-piece{
+    position: relative;
+}
+
+.flip-countdown .flip-countdown-piece::before{
+    content: '';
+    position: absolute;
+    background-color: hsl(235, 16%, 14%);
+    width: .8rem;
+    height: 1.4rem;
+    left: 0rem;
+    top: 33%;
+    z-index: 2;
+
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec{
+    margin: 0;
+}
+.flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__top, .flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__bottom, .flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__back::before, .flip-countdown .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec .card__back::after{
+    padding: 0;
+}
+.flip-countdown .flip-countdown-piece::after{
+    content: '';
+    position: absolute;
+    background-color: hsl(235, 16%, 14%);
+    width: .8rem;
+    height: 1.4rem;
+    right: 0rem;
+    top: 33%;
+
+
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+}

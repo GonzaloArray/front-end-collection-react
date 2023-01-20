@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { arrayProyect } from '../Data/Proyect'
 
 const Title = styled.h1`
     text-align: center;
-    margin-top: 4rem;
+    margin: 4rem 0;
     font-size: 2rem;
     text-shadow: 1px 3px 5px blue;
 `
@@ -16,6 +17,13 @@ const SeccionLink = styled.div`
     font-size: 2rem;
     line-height: 2.4rem;
     text-shadow: 1px 3px 5px blue;
+    transition: .2s ease-in-out;
+
+    &:hover{
+      background-color: #1f1f28;
+      transform: scale(1.1);
+      transition: .2s ease-in-out;
+    }
 `
 const DivisorChallengue = styled.div`
     display: grid;
@@ -31,20 +39,16 @@ export const Index = () => {
   return (
     <div className='container'>
       <Title>Front-end Challengue - By Mentor</Title>
-
       <DivisorChallengue>
-        <SeccionLink>
-          <Link to='/dashboard'>CountDown Challengue</Link>
-        </SeccionLink>
-        <SeccionLink>
-          <Link to='/dashboard'>E-commerce product page</Link>
-        </SeccionLink>
-        <SeccionLink>
-          <Link to='/TicTacToe'>Tic Tac Toe</Link>
-        </SeccionLink>
-        <SeccionLink>
-          <Link to='/MouseFollower'>Mouse Follower</Link>
-        </SeccionLink>
+
+        {
+          arrayProyect.map(proyect => (
+            <SeccionLink key={proyect.id}>
+              <Link to={`/${proyect.urlname}`}>{proyect.title}</Link>
+            </SeccionLink>
+          ))
+        }
+
       </DivisorChallengue>
     </div>
   )

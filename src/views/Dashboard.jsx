@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { CountDownl } from '../components/LaunchCoutdown/Coutdown/CountDownl'
 import { Description } from '../components/LaunchCoutdown/Description'
-import icon_mount from '../assets/images/pattern-hills.svg'
+import iconMount from '../assets/images/pattern-hills.svg'
 
 const ImgMount = styled.div`
         position: absolute;
@@ -22,7 +22,7 @@ export const Dashboard = () => {
       </section>
       <CountDownl />
       <ImgMount>
-        <ImgBack src={icon_mount} alt='Icon mount' />
+        <ImgBack src={iconMount} alt='Icon mount' />
       </ImgMount>
     </>
   )

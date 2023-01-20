@@ -18,7 +18,6 @@ export const MouseEvent = () => {
   useEffect(() => {
     const handleMove = (event) => {
       const { clientX, clientY } = event
-
       setPosition({ x: clientX, y: clientY })
     }
 
@@ -33,7 +32,13 @@ export const MouseEvent = () => {
     // Cleanup
     // --> cuando el componente se desmonta
     // --> cuando cambian las dependencias, antes de ejecutar el efecto de nuevo
-    return () => {
+
+    /*
+      --> cunado el componente se desmota
+      --> cuando cambian las dependencias, antes de ejecutar el efecto de nuevo
+    */
+    // Otra buena practica es solamente usar el document en el useEffect, no por fuera porque no contiene useEffect el servidor
+    return () => { // Esto es el cleanup method --> que se ejecuta cuando escucha por los cambios
       window.removeEventListener('pointermove', handleMove)
     }
   }, [enable])

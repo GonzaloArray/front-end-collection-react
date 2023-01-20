@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { Dashboard } from './views/Dashboard'
+import { EcommercePage } from './views/EcommercePage'
 import { Index } from './views/Index'
 import { MouseFollower } from './views/MouseFollower'
 import { TicTacToe } from './views/TicTacToe'
@@ -27,6 +28,10 @@ function App () {
         {
           path: '/MouseFollower',
           element: <MouseFollower />
+        },
+        {
+          path: '/ecommercepage',
+          element: <EcommercePage />
         }
       ]
     }

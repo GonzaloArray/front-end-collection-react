@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 const TitleProduct = styled.h3`
   color: rgb(255, 125, 26);
+  @media (min-width: 768px) {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
 `
 const Title = styled.h2`
   color: black;

@@ -45,8 +45,18 @@ const Logo = styled.h2`
 const ImgHeader = styled.img`
   width: 1.8rem;
 `
+const CardLength = styled.span`
+  position: absolute;
+  color: white;
+  top: -.4rem;
+  right: .1rem;
+  background-color: rgb(255, 125, 26);
+  padding: 0rem .4rem;
+  border-radius: 2rem;
+  font-size: 10px;
+`
 
-export const HeaderEccomerce = ({ modal, setModal, menuToggle, setMenuToggle }) => {
+export const HeaderEccomerce = ({ modal, setModal, menuToggle, setMenuToggle, arrayBuy }) => {
   const handleClick = () => {
     setModal(!modal)
   }
@@ -70,6 +80,7 @@ export const HeaderEccomerce = ({ modal, setModal, menuToggle, setMenuToggle }) 
       <DivisorFlexRow>
         <button onClick={handleClick} className='btn-header' type='button'>
           <ImgHeader src={iconCard} alt='Icono cart' />
+          <CardLength>{arrayBuy.map(e => e.count)}</CardLength>
         </button>
         <button className='btn-header' type='button'>
           <ImgHeader src={iconUser} alt='Icono user' />

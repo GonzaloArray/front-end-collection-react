@@ -14,6 +14,12 @@ const ModalArticle = styled.article`
   background-color: white;
   z-index: 2;
   padding: 1rem 0;
+  @media (min-width: 768px) {
+    left: 50%;
+    top: 7rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    right: 0;
+  }
 `
 const ModalHeader = styled.header`
   border-bottom: 1px solid #0004;
@@ -22,6 +28,9 @@ const ModalHeader = styled.header`
 const Title = styled.h2`
   color: black;
   font-weight: lighter;
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `
 const TitleEmpty = styled.h2`
   color: #00000041;

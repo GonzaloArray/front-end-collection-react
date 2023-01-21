@@ -13,6 +13,9 @@ const ImgSection = styled.img`
       height: 400px;
       overflow: none;
   }
+  @media (min-width: 1400px) {
+      height: 500px;
+  }
 `
 const SectionProduct = styled.div`
   margin-top: 1rem;
@@ -22,13 +25,17 @@ const SectionProduct = styled.div`
   gap: 2rem;
 `
 
-export const ProductImgSection = ({ count }) => {
+export const ProductImgSection = ({ count, setImgModal, imgModal }) => {
   const productArray = [
     { imgurl: Product1, id: 1 },
     { imgurl: Product2, id: 2 },
     { imgurl: Product3, id: 3 },
     { imgurl: Product4, id: 4 }
   ]
+
+  const handleImg = () => {
+    setImgModal(!imgModal)
+  }
 
   return (
     <>
@@ -46,11 +53,14 @@ export const ProductImgSection = ({ count }) => {
                 style={{
                   width: '5rem',
                   borderRadius: '1rem',
-                  opacity: e.id - 1 === count ? '.6' : '1'
+                  opacity: e.id - 1 === count ? '.6' : '1',
+                  cursor: 'pointer'
                 }}
+                onClick={handleImg}
               />
             ))
           }
+
         </SectionProduct>
       </MediaQuery>
     </>

@@ -1,4 +1,14 @@
 .btn-header{
     padding: 0;
     background-color: transparent;
+    position: relative;
+    border: none;
+    transition: .4s ease-in-out;
+}
+.btn-header:nth-child(2):hover{
+    background-color: chocolate;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    transition: .4s ease-in-out;
 }

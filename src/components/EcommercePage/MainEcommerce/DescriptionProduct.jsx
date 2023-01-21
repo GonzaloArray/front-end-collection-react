@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { DescripcionProductChild } from './DescripcionProductChild'
+import imgCart from '../../../assets/images/ecommerce/icon-buy.svg'
 
 const DivisorGeneral = styled.div`
   display: flex;
@@ -40,6 +41,13 @@ const ButtonAdd = styled.button`
   font-size: 1rem;
   padding: 1rem;
   margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  &:hover{
+    background-color: rgba(255, 125, 26, 0.582);
+  }
   @media (min-width: 768px) {
       margin: 0;
   }
@@ -90,7 +98,10 @@ export const DescriptionProduct = ({ arrayBuy, setArrayBuy }) => {
             <Amound>{count}</Amound>
             <ButtonCount onClick={handleAdd}>+</ButtonCount>
           </SectionCountProduct>
-          <ButtonAdd onClick={handleBuytoAdd}>Add to card</ButtonAdd>
+          <ButtonAdd onClick={handleBuytoAdd}>
+            <img src={imgCart} alt='Icono cart' />
+            <p>Add to cart</p>
+          </ButtonAdd>
         </DivisorDesktop>
       </DivisorGeneral>
     </section>

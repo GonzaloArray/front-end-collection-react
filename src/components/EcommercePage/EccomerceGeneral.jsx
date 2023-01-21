@@ -22,7 +22,7 @@ export const EccomerceGeneral = () => {
   return (
     <DivisorContainer>
       <div className='container'>
-        <HeaderEccomerce modal={modal} setModal={setModal} menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
+        <HeaderEccomerce modal={modal} setModal={setModal} menuToggle={menuToggle} setMenuToggle={setMenuToggle} arrayBuy={arrayBuy} />
       </div>
       {
         modal && <ModalCard arrayBuy={arrayBuy} setArrayBuy={setArrayBuy} />
@@ -30,7 +30,11 @@ export const EccomerceGeneral = () => {
       {
         menuToggle && <MenuToggle menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
       }
-      <MainEccomerce arrayBuy={arrayBuy} setArrayBuy={setArrayBuy} />
+      <MainEccomerce
+        arrayBuy={arrayBuy}
+        setArrayBuy={setArrayBuy}
+      />
+
     </DivisorContainer>
   )
 }

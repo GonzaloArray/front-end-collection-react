@@ -6,6 +6,7 @@ import { checkEndGame, checkWinner } from '../../../logic/BoardTicToc'
 import { resetSave, saveGame } from '../../../logic/storage'
 import { Square } from '../Square/Square'
 import { WinnerModal } from '../Square/WinnerModal'
+import { Board } from './Board'
 
 import './General.css'
 
@@ -75,20 +76,7 @@ export const General = () => {
 
       <Title>Tic Tac Toe</Title>
       <button onClick={handleReset}>Empezar de nuevo</button>
-      <section className='game'>
-        {
-                    board.map((_, i) => (
-                      <Square
-                        key={i}
-                        index={i}
-                        updateBoard={updateBoard}
-                      >
-                        {board[i]}
-                      </Square>
-
-                    ))
-        }
-      </section>
+      <Board board={board} updateBoard={updateBoard} />
 
       <section className='turn'>
         <Square isSelected={turn === TURNS.X}> {TURNS.X} </Square>

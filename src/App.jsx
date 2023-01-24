@@ -1,11 +1,10 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { Dashboard, EcommercePage, MouseFollower, TicTacToe, Kfc } from './views/index.js'
+
 import { Layout } from './components/Layout'
-import { Dashboard } from './views/Dashboard'
-import { EcommercePage } from './views/EcommercePage'
-import { Index } from './views/Index'
-import { MouseFollower } from './views/MouseFollower'
-import { TicTacToe } from './views/TicTacToe'
+import { Index } from './views/Index.jsx'
 
 function App () {
   const router = createBrowserRouter([
@@ -32,6 +31,10 @@ function App () {
         {
           path: '/ecommercepage',
           element: <EcommercePage />
+        },
+        {
+          path: '/kfc',
+          element: <Kfc />
         }
       ]
     }

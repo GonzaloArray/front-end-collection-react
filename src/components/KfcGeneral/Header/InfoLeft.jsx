@@ -53,7 +53,12 @@ export const InfoLeft = () => {
       <Description>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque assumenda esse repellat voluptatum error dolor nesciunt? Qui reprehenderit harum aliquid dolore maiores, repellendus consequuntur in! Quo aliquid consectetur sed quod.
       </Description>
-      <ButtonOrden>
+      <ButtonOrden
+        initial={{ opacity: 0, x: '-100%', duration: 2 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        whileInView={{ opacity: 1, x: 0, type: 'spring' }}
+      >
         Orden Now
       </ButtonOrden>
       <OrdenSlider>

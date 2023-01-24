@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HeaderKfc } from './Header/HeaderKfc'
+import { Main } from './Main/Main'
 
 const DivisorContainer = styled.article`
   flex: 1;
@@ -12,6 +13,7 @@ export const KfcGeneral = () => {
   return (
     <DivisorContainer>
       <HeaderKfc />
+      <Main />
     </DivisorContainer>
   )
 }

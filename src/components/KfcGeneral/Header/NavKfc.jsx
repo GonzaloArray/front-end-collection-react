@@ -65,10 +65,10 @@ export const NavKfc = () => {
         </ItemContainer>
         <DivisionItem>
           <Akun>
-            <IconImg src={Icon} alt='' />
+            <IconImg src={Icon} alt='Icon Img' />
           </Akun>
           <Akun>
-            <IconImg src={Cart} alt='' />
+            <IconImg src={Cart} alt='Logo cart' />
           </Akun>
 
         </DivisionItem>

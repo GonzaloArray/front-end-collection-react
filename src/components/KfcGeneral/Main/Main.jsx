@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import KFC from '../../../assets/images/kfcchallengue/KFC.png'
 import { ComboGeneral } from './ComboGeneral'
+import { MobileSection } from './MobileSection'
+import { RealStories } from './RealStories'
 
 const MainGeneral = styled.main`
     height: 659px;
@@ -18,11 +20,15 @@ const ImgSection = styled.img`
 
 export const Main = () => {
   return (
-    <MainGeneral>
-      <ImgSection src={KFC} alt='Kfc Argentina' />
-      <div className='container' style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <ComboGeneral />
-      </div>
-    </MainGeneral>
+    <>
+      <MainGeneral>
+        <ImgSection src={KFC} alt='Kfc Argentina' />
+        <div className='container' style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+          <ComboGeneral />
+        </div>
+      </MainGeneral>
+      <MobileSection />
+      <RealStories />
+    </>
   )
 }

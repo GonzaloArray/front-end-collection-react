@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Footer } from './Footer/Footer'
 import { HeaderKfc } from './Header/HeaderKfc'
 import { Main } from './Main/Main'
 
@@ -14,6 +15,7 @@ export const KfcGeneral = () => {
     <DivisorContainer>
       <HeaderKfc />
       <Main />
+      <Footer />
     </DivisorContainer>
   )
 }

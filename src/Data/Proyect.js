@@ -23,5 +23,10 @@ export const arrayProyect = [
     id: '5',
     urlname: 'kfc',
     title: 'KFC Challenge'
+  },
+  {
+    id: '6',
+    urlname: 'challenguecat',
+    title: 'Challenge Cat'
   }
 ]

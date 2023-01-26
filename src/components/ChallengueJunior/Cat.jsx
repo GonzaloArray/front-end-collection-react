@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Button } from './components/Button'
 import { Fact } from './components/Fact'
 import { Img } from './components/Img'

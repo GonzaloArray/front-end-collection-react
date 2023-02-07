@@ -4,7 +4,7 @@ import { TESTIMONIES } from '../../../Data/kfc/Testimonies'
 import { Stories } from './Testimonials/Stories'
 
 const DivisionSection = styled.div`
-    height: 495px;
+    height: 896px;
 
     display: flex;
     align-items: center;
@@ -20,6 +20,11 @@ const DescriptionSubtitle = styled(TitleStories)`
   font-size: 1rem;
   line-height: 3.5rem;
 `
+const DivisorRealStories = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+`
 
 export const RealStories = () => {
   return (
@@ -28,14 +33,14 @@ export const RealStories = () => {
         <TitleStories>Real Stories from Real Customers</TitleStories>
         <DescriptionSubtitle>Get Inspired by these Stories</DescriptionSubtitle>
       </div>
-      <div style={{ display: 'flex', gap: '2rem' }}>
+      <DivisorRealStories>
         {
             TESTIMONIES.map(tst => (
-              <Stories key={tst.id} stories={tst.testimonies} name={tst.name} twitter={tst.twitter} />
+              <Stories key={tst.id} stories={tst.testimonies} name={tst.name} twitter={tst.twitter} columnArea={tst.columnArea} rowArea={tst.rowArea} />
             ))
         }
 
-      </div>
+      </DivisorRealStories>
     </DivisionSection>
   )
 }

@@ -43,8 +43,15 @@ const Price = styled.span`
   border-radius: 18px;
   color: ${props => props.type};
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: .5rem;
+
+`
+const SpanPrice = styled.span`
+  font-size: 40px;
+  line-height: 48px;
+  transform: rotate(-12deg);
 `
 const ImgSection = styled.div`
   width: 154px;
@@ -67,7 +74,7 @@ const ImgChild = styled(motion.img)`
   bottom: -2rem;
   left: ${props => props.left};
 `
-export const SpecialCombo = ({ title, category, price, background, circle, type }) => {
+export const SpecialCombo = ({ title, category, price, background, type }) => {
   return (
     <ContainerCard
       background={background}
@@ -80,9 +87,9 @@ export const SpecialCombo = ({ title, category, price, background, circle, type 
       <ContainerInfo>
         <Title>{title}</Title>
         <Description>{category}</Description>
-        <Price circle={circle} type={type}>Rp. {price}</Price>
+        <Price type={type}>Rp. <SpanPrice>{price}</SpanPrice></Price>
       </ContainerInfo>
-      <ImgSection circle={circle}>
+      <ImgSection>
         <Img
           src={Krispy}
           alt='Info Menu'

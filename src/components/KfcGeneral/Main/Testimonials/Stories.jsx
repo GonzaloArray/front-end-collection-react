@@ -15,6 +15,9 @@ const CardStories = styled(motion.div)`
     width: 400px;
     height: 200px;
     border-radius: 4px;
+
+    grid-column: ${props => props.column};
+    grid-row: ${props => props.row};
 `
 const DescripStories = styled.h2`
   font-size: 14px;
@@ -31,9 +34,9 @@ const Twitter = styled.p`
   font-size: 12px;
   margin: 0;
 `
-export const Stories = ({ stories, name, twitter }) => {
+export const Stories = ({ stories, name, twitter, columnArea, rowArea }) => {
   return (
-    <CardStories>
+    <CardStories column={columnArea} row={rowArea}>
       <DescripStories>{stories}</DescripStories>
       <div>
         <Name>{name}</Name>

@@ -49,7 +49,6 @@ export const ComboGeneral = () => {
               category={cb.category}
               price={cb.price}
               background={cb.background}
-              circle={cb.circle}
               type={cb.type}
             />
           ))

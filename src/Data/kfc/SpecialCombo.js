@@ -5,8 +5,7 @@ export const SPECIALCOMBO = [
     price: '50,999',
     category: 'MAKAN BARENG SAMA SI DIA CUMAN',
     background: '#fff',
-    circle: '#FFC71F',
-    type: '#fff'
+    type: '#F73D27'
   },
   {
     id: '2',
@@ -14,7 +13,6 @@ export const SPECIALCOMBO = [
     price: '190,999',
     category: 'MAKAN BARENG KELUARGA',
     background: '#fff',
-    circle: '#FFC71F',
-    type: '#fff'
+    type: '#F73D27'
   }
 ]

@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import { Dashboard, EcommercePage, MouseFollower, TicTacToe, Kfc, ChallengueJunior } from './views/index.js'
+import { Dashboard, EcommercePage, MouseFollower, TicTacToe, Kfc, ChallengueJunior, TodoList } from './views/index.js'
 
 import { Layout } from './components/Layout'
 import { Index } from './views/Index.jsx'
@@ -39,6 +39,10 @@ function App () {
         {
           path: '/challenguecat',
           element: <ChallengueJunior />
+        },
+        {
+          path: '/todolist',
+          element: <TodoList />
         }
       ]
     }

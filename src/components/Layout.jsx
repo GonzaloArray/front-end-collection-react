@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Outlet } from 'react-router-dom'
 import { Nav } from './Nav/Nav'
 import './Layout.css'
-import icon_arrow from '../assets/images/icon-arrow.svg'
+import iconArrow from '../assets/images/icon-arrow.svg'
 
 const Header = styled.header`
         display: flex;
@@ -37,7 +37,7 @@ export const Layout = () => {
                           <div className='feh-flex'>
                             <Nav />
                             <ButtonModal type='button' onClick={handleClick}>
-                              <img src={icon_arrow} alt='Icon Arrow' />
+                              <img src={iconArrow} alt='Icon Arrow' />
                             </ButtonModal>
                           </div>
                         </div>

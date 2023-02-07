@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
 import styled from 'styled-components'
+import { TodoContext } from '../../context/todoContext'
 import { Item } from './Item'
 
 const ContainerList = styled.div`
@@ -26,7 +28,9 @@ const List = styled.ul`
   gap: 1rem;
 `
 
-export const ListItem = ({ todoList, setTodoList }) => {
+export const ListItem = ({ setTodoList }) => {
+  const todoList = useContext(TodoContext)
+
   return (
     <ContainerList>
       <Title>List Todo</Title>
@@ -34,7 +38,7 @@ export const ListItem = ({ todoList, setTodoList }) => {
       <List>
         {
           todoList.map(todo => (
-            <Item key={todo.id} id={todo.id} todoList={todoList} setTodoList={setTodoList}>{todo.name}</Item>
+            <Item key={todo.id} id={todo.id} setTodoList={setTodoList}>{todo.name}</Item>
           ))
         }
       </List>

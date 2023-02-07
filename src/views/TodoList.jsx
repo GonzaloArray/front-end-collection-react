@@ -21,9 +21,8 @@ export const TodoList = () => {
         initial={{ y: '150%' }}
         animate={{ y: 0 }}
       >
-        Todo List
+        Todo List React + Context
       </Title>
-
       <Todo />
     </Container>
   )

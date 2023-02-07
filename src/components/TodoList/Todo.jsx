@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { TodoContext } from '../../context/todoContext'
 import { TODODATA } from '../../Data/TodoData/Todo'
 import { ListItem } from './ListItem'
 
@@ -39,12 +40,14 @@ export const Todo = () => {
 
   return (
     <ContainerTodo>
-      <form onSubmit={handleSubmit}>
-        <Input type='text' placeholder='Todo?' value={item} onChange={(e) => setItem(e.target.value)} />
-        <input type='submit' value='Enviar' />
-      </form>
+      <TodoContext.Provider value={todoList}>
+        <form onSubmit={handleSubmit}>
+          <Input type='text' placeholder='Todo?' value={item} onChange={(e) => setItem(e.target.value)} />
+          <input type='submit' value='Enviar' />
+        </form>
 
-      <ListItem todoList={todoList} setTodoList={setTodoList} />
+        <ListItem setTodoList={setTodoList} />
+      </TodoContext.Provider>
     </ContainerTodo>
   )
 }

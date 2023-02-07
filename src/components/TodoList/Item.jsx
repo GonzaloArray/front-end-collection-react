@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useReducer, useContext, useState } from 'react'
+
 import styled from 'styled-components'
+import { TodoContext } from '../../context/todoContext'
+import { todoReducer } from '../../reducer/useReducer'
 
 const ItemChildren = styled(motion.li)`
   display: flex;
@@ -21,13 +24,23 @@ const Button = styled.button`
   align-items: center;
 `
 
-export const Item = ({ id, children, todoList, setTodoList }) => {
+export const Item = ({ id, children, setTodoList }) => {
+  const todoList = useContext(TodoContext)
+  const [state, dispatch] = useReducer(todoReducer, todoList)
+
   const [modal, setModal] = useState(false)
   const [item, setItem] = useState(children)
 
   const handleClick = (id) => {
-    const filterTodo = todoList.filter(todo => todo.id !== id)
-    setTodoList(filterTodo)
+    // const filterTodo = todoList.filter(todo => todo.id !== id)
+    // setTodoList(filterTodo)
+    const action = {
+      type: '[TODO] Remove Todo',
+      payload: id
+    }
+
+    dispatch(action)
+    console.log(state)
   }
 
   const handleEdit = (e) => {

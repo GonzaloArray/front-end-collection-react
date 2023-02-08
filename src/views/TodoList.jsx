@@ -5,7 +5,7 @@ import { Todo } from '../components/TodoList/Todo'
 const Container = styled.section`
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #5c5c5c;
 `
 const Title = styled(motion.h2)`
     color: black;
@@ -21,7 +21,7 @@ export const TodoList = () => {
         initial={{ y: '150%' }}
         animate={{ y: 0 }}
       >
-        Todo List React + Context
+        Todo List React + Context + Reducer + Firebase + Local Storage
       </Title>
       <Todo />
     </Container>

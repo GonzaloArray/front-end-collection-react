@@ -1,18 +1,39 @@
-import { useEffect, useReducer } from 'react'
+import { collection, onSnapshot, query } from 'firebase/firestore'
+import { useState, useRef, useEffect, useReducer } from 'react'
+import { db } from '../firebase-config'
 import { todoReducer } from '../reducer/useReducer'
 
+const todoFromStorage = JSON.parse(localStorage.getItem('todo') || '[]')
+
 export const useTodo = () => {
-  const initialTodo = []
-
-  const init = () => {
-    return JSON.parse(localStorage.getItem('todo')) || initialTodo
-  }
-
-  const [todos, dispatch] = useReducer(todoReducer, initialTodo, init)
+  const initialTodoRef = useRef(todoFromStorage)
+  const [initialTodo, setInitialTodo] = useState(initialTodoRef.current)
 
   useEffect(() => {
-    localStorage.setItem('todo', JSON.stringify(todos))
-  }, [todos])
+    const q = query(collection(db, 'message'))
+    onSnapshot(q, (querySnapshot) => {
+      const todo = []
+      querySnapshot.forEach((doc) => {
+        todo.push({
+          name: doc.data().name,
+          idTodo: doc.data().id,
+          createAt: doc.data().createAt,
+          id: doc.id
+        })
+      })
+
+      localStorage.setItem('todo', JSON.stringify(todo))
+      initialTodoRef.current = todo
+      setInitialTodo(todo)
+
+      dispatch({
+        type: '[TODO] Load Todos',
+        payload: todo
+      })
+    })
+  }, [])
+
+  const [todos, dispatch] = useReducer(todoReducer, initialTodo)
 
   const onNewTodo = (todo) => {
     const action = {

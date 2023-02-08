@@ -27,15 +27,25 @@ export const Todo = () => {
   const [item, setItem] = useState('')
 
   const { todos, onNewTodo, handleDeleteTodo, handleEditTodo } = useTodo()
-  const handleSubmit = (e) => {
+
+  console.log(todos)
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (item === '') return
     onNewTodo({
       name: item,
       id: Date.now()
     })
 
     setItem('')
+
+    /* await addDoc(TodoCollection, {
+      text: item,
+      createAt: serverTimestamp()
+    })
+
+    setItem('') */
   }
 
   return (

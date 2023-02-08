@@ -28,8 +28,8 @@ const List = styled.ul`
   gap: 1rem;
 `
 
-export const ListItem = ({ setTodoList }) => {
-  const todoList = useContext(TodoContext)
+export const ListItem = () => {
+  const { todos } = useContext(TodoContext)
 
   return (
     <ContainerList>
@@ -37,8 +37,8 @@ export const ListItem = ({ setTodoList }) => {
 
       <List>
         {
-          todoList.map(todo => (
-            <Item key={todo.id} id={todo.id} setTodoList={setTodoList}>{todo.name}</Item>
+          todos.map(todo => (
+            <Item key={todo.id} id={todo.id}>{todo.name}</Item>
           ))
         }
       </List>

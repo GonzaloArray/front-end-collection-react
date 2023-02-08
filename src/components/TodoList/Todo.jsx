@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { TodoContext } from '../../context/todoContext'
-import { TODODATA } from '../../Data/TodoData/Todo'
+import { useTodo } from '../../hooks/useTodo'
 import { ListItem } from './ListItem'
 
 const ContainerTodo = styled.div`
@@ -25,28 +25,28 @@ const Input = styled.input`
 
 export const Todo = () => {
   const [item, setItem] = useState('')
-  const [todoList, setTodoList] = useState(TODODATA)
 
+  const { todos, onNewTodo, handleDeleteTodo, handleEditTodo } = useTodo()
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    setTodoList([...todoList, {
-      id: Date.now(),
-      name: item
-    }])
+    onNewTodo({
+      name: item,
+      id: Date.now()
+    })
 
     setItem('')
   }
 
   return (
     <ContainerTodo>
-      <TodoContext.Provider value={todoList}>
+      <TodoContext.Provider value={{ todos, handleDeleteTodo, handleEditTodo }}>
         <form onSubmit={handleSubmit}>
           <Input type='text' placeholder='Todo?' value={item} onChange={(e) => setItem(e.target.value)} />
           <input type='submit' value='Enviar' />
         </form>
 
-        <ListItem setTodoList={setTodoList} />
+        <ListItem />
       </TodoContext.Provider>
     </ContainerTodo>
   )

@@ -15,6 +15,12 @@ export const todoReducer = (initialState = [], action) => {
 
         return td
       })
+    case '[TODO] Edit Todo':
+      return initialState.map(todo =>
+        todo.id === action.payload.id
+          ? { ...todo, name: action.payload.nameUpdate }
+          : todo
+      )
 
     default:
       return initialState

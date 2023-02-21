@@ -21,7 +21,7 @@ export const TodoList = () => {
         initial={{ y: '150%' }}
         animate={{ y: 0 }}
       >
-        Todo List React + Context + Reducer + Firebase + Local Storage
+        Todo List React + Context + Reducer + Firebase
       </Title>
       <Todo />
     </Container>
